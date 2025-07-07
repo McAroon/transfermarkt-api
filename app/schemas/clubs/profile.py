@@ -7,7 +7,7 @@ from app.schemas.base import TransfermarktBaseModel
 class ClubSquad(TransfermarktBaseModel):
     size: int
     average_age: float
-    foreigners: int
+    foreigners: Optional[int] = None
     national_team_players: int
 
 
@@ -37,8 +37,8 @@ class ClubProfile(TransfermarktBaseModel):
     members_date: Optional[date] = None
     other_sports: Optional[list[str]] = None
     colors: Optional[list[str]] = []
-    stadium_name: str
-    stadium_seats: int
+    stadium_name: Optional[str] = None
+    stadium_seats: Optional[int] = None
     current_transfer_record: int
     current_market_value: Optional[int] = None
     confederation: Optional[str] = None
